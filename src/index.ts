@@ -54,14 +54,10 @@ process.on('SIGINT', () => {
 
 // Start the server and listen on the specified port
 const server = app.listen(port, () => {
-  console.log(`[${new Date().toISOString()}] Backend server started successfully`);
-  console.log(`[${new Date().toISOString()}] Server listening at http://localhost:${port}`);
-  console.log(`[${new Date().toISOString()}] Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`[${new Date().toISOString()}] Process ID: ${process.pid}`);
+  console.log(`[${new Date().toISOString()}] Server listening on port ${port}`);
 });
 
 // Handle server errors - log detailed error information for debugging
 server.on('error', (err) => {
   console.error(`[${new Date().toISOString()}] Server error: ${err.message}`);
-  console.error(`[${new Date().toISOString()}] Stack: ${err.stack}`);
 }); 
